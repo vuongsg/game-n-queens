@@ -1,0 +1,42 @@
+$width_cell: 50px;
+$height_cell: 50px;
+$white: #fff;
+$black: #000;
+
+#select-area {
+    padding-top: 30px;
+}
+
+#img-queen {
+    width: $width_cell;
+    height: $height_cell;
+    cursor: pointer;
+}
+
+#grid-board {
+    display: grid;
+    grid-auto-rows: auto;
+    padding-top: 30px;
+}
+
+.row-board {
+    grid-row: auto;
+
+    &.second-more {
+        margin-top: -4px;
+    }
+}
+
+.cell-board {
+    display: inline-flex;
+    width: $width_cell;
+    height: $height_cell;
+
+    &.white {
+        background-color: $white;
+    }
+
+    &.black {
+        background-color: $black;
+    }
+}

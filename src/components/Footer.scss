@@ -1,0 +1,13 @@
+$footer-bg: #2e3033;
+
+#main-footer {
+    background: $footer-bg;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    vertical-align: bottom;
+    position: fixed;
+    width: 100%;
+    left: 0px;
+    bottom: 0px;
+}
