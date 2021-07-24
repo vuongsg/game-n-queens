@@ -14,12 +14,13 @@ export const Nqueens = (): ReactElement => {
     const rowsBoard = useRef(initialRowsBoard);
 
     const drawBoard = useCallback(() => {
-        const handleDropQueen = (e:React.DragEvent<HTMLDivElement>): void => {
-            let cellBoard =  (e.target) as HTMLDivElement;
+        const gridBoard = document.querySelector('#grid-board');
 
-            if (cellBoard !== null && cellBoard.className.indexOf('cell-board') !== -1) {
-                const gridBoard = document.querySelector('#grid-board');
-                const elementsSameRow = gridBoard?.getElementsByClassName(cellBoard.classList[0]);
+        const handleDropQueen = (e:React.DragEvent<HTMLDivElement>): void => {
+            let cellBoard = (e.target) as HTMLDivElement;
+
+            if (gridBoard !== null && cellBoard !== null && cellBoard.className.indexOf('cell-board') !== -1) {
+                const elementsSameRow = gridBoard.getElementsByClassName(cellBoard.classList[0]);
 
                 //reset background for all elements in that row
                 if (elementsSameRow != null) {
@@ -37,6 +38,18 @@ export const Nqueens = (): ReactElement => {
                 cellBoard.style.backgroundSize = 'cover';
             } 
         };
+        
+        if (gridBoard !== null) {   //at initialize, gridBoard does not exist
+            const rowsCollection = Array.from(document.getElementsByClassName('row-board'));
+
+            for (let row of rowsCollection) {
+                const cellsCollection = Array.from(row.getElementsByClassName('cell-board'));
+
+                for (let cell of cellsCollection) {
+                    (cell as HTMLDivElement).style.backgroundImage = 'none';
+                }
+            }
+        }
 
         const rows = board.length;
         document.title = `Game ${rows} x ${rows} queens`;
