@@ -1,5 +1,5 @@
 # N Queens
-N queens puzzle. You can try with 4x4, 6x6, 8x8 and 10x10 boards.
+N queens puzzle. You can try with variant 4x4, 6x6, 8x8 and 10x10 boards.
 
 ## Running
 ```

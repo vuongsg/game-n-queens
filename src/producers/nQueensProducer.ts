@@ -1,44 +1,35 @@
 export class NqueenProducer {
-    board: boolean[][];
-
-    constructor(size: number) {
-        this.board = Array(size);
-        for (let row = 0; row < size; row++) {
-            this.board[row] = Array(size).fill(false);
-        }
-    }
-
-    checkBoardValid(): boolean {
-        const size = this.board.length;
+    static checkBoardValid(board: boolean[][]): [number, number][] {
+        const size = board.length;
 
         for (let row = 0; row < size; row++) {
             for (let col = 0; col < size; col++) {
-                if (this.board[row][col]) {
+                if (board[row][col]) {
                     //check above
                     for (let i = row - 1; i >= 0; i--) {
-                        if (this.board[i][col]) {
-                            return false;
+                        if (board[i][col]) {
+                            return [[i, col], [row, col]];
                         }
                     }
 
                     //check left-side
                     for (let k = col - 1; k >= 0; k--) {
-                        if (this.board[row][k]) {
-                            return false;
+                        if (board[row][k]) {
+                            return [[row, k], [row, col]];
                         }
                     }
                     
                     //check upper-backward slash
                     for (let i = row - 1; i >= 0; i--)
                         for (let k = col - 1; k >= 0; k--) {
-                            if (this.board[i][k]) {
-                                return false;
+                            if (board[i][k]) {
+                                return [[i, k], [row, col]];
                             }
                         }
                 }
             }
         }
 
-        return true;
+        return [];
     }
 }

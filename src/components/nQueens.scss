@@ -31,6 +31,7 @@ $black: #000;
     display: inline-flex;
     width: $width_cell;
     height: $height_cell;
+    cursor: pointer;
 
     &.white {
         background-color: $white;
@@ -39,4 +40,8 @@ $black: #000;
     &.black {
         background-color: $black;
     }
+}
+
+input[disabled], button:disabled {
+    pointer-events: none;
 }
