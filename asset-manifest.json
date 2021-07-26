@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/game-n-queens/static/css/main.9ab27185.chunk.css",
+    "main.css": "/game-n-queens/static/css/main.7840b6f2.chunk.css",
     "main.js": "/game-n-queens/static/js/main.63be20fe.chunk.js",
     "main.js.map": "/game-n-queens/static/js/main.63be20fe.chunk.js.map",
     "runtime-main.js": "/game-n-queens/static/js/runtime-main.086be94d.js",
@@ -10,13 +10,13 @@
     "static/js/3.57ff7f04.chunk.js": "/game-n-queens/static/js/3.57ff7f04.chunk.js",
     "static/js/3.57ff7f04.chunk.js.map": "/game-n-queens/static/js/3.57ff7f04.chunk.js.map",
     "index.html": "/game-n-queens/index.html",
-    "static/css/main.9ab27185.chunk.css.map": "/game-n-queens/static/css/main.9ab27185.chunk.css.map",
+    "static/css/main.7840b6f2.chunk.css.map": "/game-n-queens/static/css/main.7840b6f2.chunk.css.map",
     "static/js/2.e11484ca.chunk.js.LICENSE.txt": "/game-n-queens/static/js/2.e11484ca.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.086be94d.js",
     "static/js/2.e11484ca.chunk.js",
-    "static/css/main.9ab27185.chunk.css",
+    "static/css/main.7840b6f2.chunk.css",
     "static/js/main.63be20fe.chunk.js"
   ]
 }
