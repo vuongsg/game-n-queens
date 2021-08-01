@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/game-n-queens/static/css/main.db5d4571.chunk.css",
-    "main.js": "/game-n-queens/static/js/main.517e12bd.chunk.js",
-    "main.js.map": "/game-n-queens/static/js/main.517e12bd.chunk.js.map",
+    "main.js": "/game-n-queens/static/js/main.eb785add.chunk.js",
+    "main.js.map": "/game-n-queens/static/js/main.eb785add.chunk.js.map",
     "runtime-main.js": "/game-n-queens/static/js/runtime-main.4321ae3c.js",
     "runtime-main.js.map": "/game-n-queens/static/js/runtime-main.4321ae3c.js.map",
     "static/js/2.d70807e7.chunk.js": "/game-n-queens/static/js/2.d70807e7.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.4321ae3c.js",
     "static/js/2.d70807e7.chunk.js",
     "static/css/main.db5d4571.chunk.css",
-    "static/js/main.517e12bd.chunk.js"
+    "static/js/main.eb785add.chunk.js"
   ]
 }
