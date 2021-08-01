@@ -1,5 +1,4 @@
-import React, { ReactElement } from 'react';
-import { useRef, useCallback } from "react";
+import React, { ReactElement, useEffect, useRef, useCallback } from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import { Grid, MenuItem, Select, InputLabel } from "@material-ui/core";
 import { changeBoard } from "../slices/nQueens-slices";
@@ -14,6 +13,34 @@ export const Nqueens = (): ReactElement => {
     const rowsBoard = useRef(initialRowsBoard);     //display UI
     let initialCurrentTempboard = [...board];       //save board state immediately each change
     let currentTempBoard = useRef(initialCurrentTempboard);
+
+    useEffect(() => {
+        return () => {
+            dispatch(changeBoard(currentTempBoard.current));
+        }
+    }, []);
+
+    useEffect(() => {
+        const btnCheckAnswer = document.querySelector('#btn-check-answer') as HTMLButtonElement;
+        const rows = board.length;
+        const eachQueenEachRow: boolean[] = Array(rows).fill(false);
+
+        for (let i = 0; i < rows; i++) {
+            for (let k = 0; k < rows; k++) {
+                if (board[i][k]) {
+                    eachQueenEachRow[i] = true;
+                }
+            }
+        }
+
+        if (eachQueenEachRow.filter(m => !m).length > 0) {
+            btnCheckAnswer.setAttribute('disabled', 'disabled');
+            (document.querySelector('#div-fake-check-answer') as HTMLDivElement).style.cursor = 'not-allowed';
+        } else {
+            btnCheckAnswer.removeAttribute('disabled');
+            (document.querySelector('#div-fake-check-answer') as HTMLDivElement).style.cursor = 'auto';
+        }
+    }, [board]);
 
     const drawBoard = useCallback(() => {
         const setQueen = (e:React.MouseEvent<HTMLDivElement>): void => {
@@ -46,7 +73,9 @@ export const Nqueens = (): ReactElement => {
                 }
 
                 currentTempBoard.current = [...tempBoard];
+
                 const btnCheckAnswer = document.querySelector('#btn-check-answer') as HTMLButtonElement;
+
                 if (eachQueenEachRow.filter(m => !m).length > 0) {
                     btnCheckAnswer.setAttribute('disabled', 'disabled');
                     (document.querySelector('#div-fake-check-answer') as HTMLDivElement).style.cursor = 'not-allowed';
@@ -98,10 +127,20 @@ export const Nqueens = (): ReactElement => {
 
         for (let i = 0; i < rows; i++) {
             const cells: ReactElement[] = [];
+
             for (let k = 0; k < rows; k++) {
                 let isWhiteCell = ((k & 1) === 0 && (i & 1) === 0) || ((k & 1) === 1 && (i & 1) === 1);
                 const classNames = `row${i} col${k} cell-board ${isWhiteCell ? 'white' : 'black'}`;
-                cells.push(React.createElement('div', { className: classNames, tabIndex: 0, onMouseDown: setQueen }));
+
+                if (board[i][k]) {
+                    cells.push(React.createElement('div', { className: classNames, 
+                        style: { backgroundImage: classNames.indexOf('white') !== -1 ? `url('${process.env.PUBLIC_URL + '/img/queen-piece.jpg'}')`
+                                                                                      : `url('${process.env.PUBLIC_URL + '/img/queen-white-piece.jpg'}')`,
+                                backgroundSize: 'cover'}, 
+                        tabIndex: 0, onMouseDown: setQueen }));
+                } else {
+                    cells.push(React.createElement('div', { className: classNames, tabIndex: 0, onMouseDown: setQueen }));
+                }
             }
 
             const rowClassNames = `row-board ${i === 0 ? '' : 'second-more'}`;
@@ -115,9 +154,6 @@ export const Nqueens = (): ReactElement => {
      */
     const changeSize = (e:React.ChangeEvent<{value: unknown}>): void => {
         reInitializeBoard(parseInt(e.target.value as string));
-        const btnCheckAnswer = document.querySelector('#btn-check-answer') as HTMLButtonElement;
-        btnCheckAnswer.setAttribute('disabled', 'disabled');
-        (document.querySelector('#div-fake-check-answer') as HTMLDivElement).style.cursor = 'not-allowed';
     }
 
     const reInitializeBoard = (size: number): void => {
@@ -196,7 +232,7 @@ export const Nqueens = (): ReactElement => {
                 </Grid>
 
                 <div id='div-fake-check-answer' style={{ marginTop: 30, marginBottom: 30, cursor: 'not-allowed' }} onMouseDown={checkAnswer}>
-                    <button id='btn-check-answer' className='primary' disabled>Check answer</button>
+                    <button id='btn-check-answer' className='primary'>Check answer</button>
                 </div>
             </Grid>
 

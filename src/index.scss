@@ -29,16 +29,22 @@ input[type='button'].primary, button.primary {
   font-weight: 500;
   line-height: 1.75;
   border-radius: 4px;
-  border-color: #fff;
+  border: none;
   letter-spacing: 0.02857em;
   text-transform: uppercase;
   cursor: pointer;
+  transition-property: opacity;
+  transition-duration: 300ms;
 
   &:disabled {
     color: #000;
     background-color: #e0e0e0;
     opacity: 0.5;
     cursor: not-allowed;
+  }
+
+  &:hover {
+    opacity: 0.6;
   }
 }
 

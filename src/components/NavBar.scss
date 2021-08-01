@@ -1,0 +1,27 @@
+$white: #fff;
+$black: #000;
+
+#main-nav-bar {
+    .MuiToolbar-regular {
+        min-height: 50px;
+    }
+}
+
+#primary-navbar-mobile {
+    top: 48px !important;
+}
+
+.makeStyles-sectionDesktop-6 {
+    button {
+        margin-right: 30px;
+    }
+
+    a { 
+        color: $white;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: $black;
+}
