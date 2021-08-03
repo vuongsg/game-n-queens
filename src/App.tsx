@@ -8,6 +8,7 @@ import './App.scss';
 
 function App() {
   const history = createBrowserHistory();
+  history.push('/');
 
   return (
     <Router history={history}>
