@@ -16,8 +16,8 @@ function App() {
         <NavBar />
 
         <Switch>
-          <Route exact path='/' component={Nqueens} />
           <Route path='/about' component={About} />
+          <Route path='/' component={Nqueens} />
         </Switch>
       </div>
     </Router>
