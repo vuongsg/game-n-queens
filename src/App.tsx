@@ -1,4 +1,3 @@
-import React from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import { NavBar } from './components/NavBar';
@@ -8,7 +7,6 @@ import './App.scss';
 
 function App() {
   const history = createBrowserHistory();
-  history.push('/');
 
   return (
     <Router history={history}>
