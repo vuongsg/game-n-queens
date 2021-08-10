@@ -1,6 +1,6 @@
 import React, { ReactElement, useEffect, useRef, useCallback } from 'react';
 import { useSelector, useDispatch } from "react-redux";
-import { Grid, MenuItem, Select, InputLabel } from "@material-ui/core";
+import { Container, Grid, MenuItem, Select, InputLabel } from "@material-ui/core";
 import { changeBoard } from "../slices/nQueens-slices";
 import { RootType } from "../store"; 
 import { NqueenProducer } from '../producers/nQueensProducer';
@@ -210,35 +210,37 @@ export const Nqueens = (): ReactElement => {
     drawBoard();    //draw board at initialize
 
     return (
-        <Grid container direction='row'>
-            <Grid item xs={12} lg={5} id='select-area'>
-                <div>
-                    <InputLabel id='label-size'>Choose size</InputLabel>
-                    <Select labelId='label-size' value={board.length} onChange={changeSize}>
-                        <MenuItem value="4">4 x 4</MenuItem>
-                        <MenuItem value="6">6 x 6</MenuItem>
-                        <MenuItem value="8">8 x 8</MenuItem>
-                        <MenuItem value="10">10 x 10</MenuItem>
-                    </Select>
-                </div>
+        <Container>
+            <Grid container direction='row'>
+                <Grid item xs={12} lg={5} id='select-area'>
+                    <div>
+                        <InputLabel id='label-size'>Choose size</InputLabel>
+                        <Select labelId='label-size' value={board.length} onChange={changeSize}>
+                            <MenuItem value="4">4 x 4</MenuItem>
+                            <MenuItem value="6">6 x 6</MenuItem>
+                            <MenuItem value="8">8 x 8</MenuItem>
+                            <MenuItem value="10">10 x 10</MenuItem>
+                        </Select>
+                    </div>
 
-                <Grid container direction='row' style={{ marginTop: 30, marginBottom: 20, alignItems: 'center' }}>
-                    <Grid xs={12} lg={3}>
-                        <img id='img-queen' alt='' src={process.env.PUBLIC_URL + '/img/queen-piece.jpg'} />
+                    <Grid container direction='row' style={{ marginTop: 30, marginBottom: 20, alignItems: 'center' }}>
+                        <Grid xs={12} lg={3}>
+                            <img id='img-queen' alt='' src={process.env.PUBLIC_URL + '/img/queen-piece.jpg'} />
+                        </Grid>
+                        <Grid xs={12} lg={9}>
+                            <p>Pick any cell to set queen. Note that every row, column and diagonal only have one queen.</p>
+                        </Grid>
                     </Grid>
-                    <Grid xs={12} lg={9}>
-                        <p>Pick any cell to set queen. Note that every row, column and diagonal only have one queen.</p>
-                    </Grid>
+
+                    <div id='div-fake-check-answer' style={{ marginTop: 30, marginBottom: 30, cursor: 'not-allowed' }} onMouseDown={checkAnswer}>
+                        <button id='btn-check-answer' className='primary'>Check answer</button>
+                    </div>
                 </Grid>
 
-                <div id='div-fake-check-answer' style={{ marginTop: 30, marginBottom: 30, cursor: 'not-allowed' }} onMouseDown={checkAnswer}>
-                    <button id='btn-check-answer' className='primary'>Check answer</button>
-                </div>
+                <Grid item xs={12} lg={7} justifyContent='center' id='grid-board'>
+                    {rowsBoard.current}
+                </Grid>
             </Grid>
-
-            <Grid item xs={12} lg={7} justifyContent='center' id='grid-board'>
-                {rowsBoard.current}
-            </Grid>
-        </Grid>
+        </Container>
     )
 }

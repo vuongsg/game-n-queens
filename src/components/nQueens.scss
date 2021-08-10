@@ -1,5 +1,7 @@
 $width_cell: 50px;
 $height_cell: 50px;
+$smal_width_cell: 40px;
+$smal_height_cell: 40px;
 $white: #fff;
 $black: #000;
 
@@ -39,5 +41,12 @@ $black: #000;
 
     &.black {
         background-color: $black;
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    .cell-board {
+        width: $smal_width_cell;
+        height: $smal_height_cell;
     }
 }

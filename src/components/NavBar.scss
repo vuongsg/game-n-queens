@@ -11,11 +11,8 @@ $black: #000;
     top: 48px !important;
 }
 
-.makeStyles-sectionDesktop-6 {
-    button {
-        margin-right: 30px;
-    }
-
+#section-desktop {
+    min-width: 600px;
     a { 
         color: $white;
     }
@@ -24,4 +21,10 @@ $black: #000;
 a {
     text-decoration: none;
     color: $black;
+}
+
+@media screen and (max-width: 1500px) {
+    #section-desktop {
+        min-width: 200px;
+    }
 }
