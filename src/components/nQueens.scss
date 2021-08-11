@@ -10,14 +10,14 @@ $black: #000;
 }
 
 #img-queen {
-    width: $width_cell;
-    height: $height_cell;
+    max-width: 100px;
+    object-fit: cover;
     cursor: pointer;
 }
 
 #grid-board {
     display: grid;
-    grid-auto-rows: auto;
+    grid-auto-rows: minmax(auto, max-content);
     padding-top: 30px;
 }
 

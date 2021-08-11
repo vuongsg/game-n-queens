@@ -213,28 +213,30 @@ export const Nqueens = (): ReactElement => {
         <Container>
             <Grid container direction='row'>
                 <Grid item xs={12} lg={5} id='select-area'>
-                    <div>
-                        <InputLabel id='label-size'>Choose size</InputLabel>
+                    <Grid item xs={12}>
+                        <InputLabel id='label-size'>Select size for the board</InputLabel>
                         <Select labelId='label-size' value={board.length} onChange={changeSize}>
                             <MenuItem value="4">4 x 4</MenuItem>
                             <MenuItem value="6">6 x 6</MenuItem>
                             <MenuItem value="8">8 x 8</MenuItem>
                             <MenuItem value="10">10 x 10</MenuItem>
                         </Select>
-                    </div>
+                    </Grid>
 
-                    <Grid container direction='row' style={{ marginTop: 30, marginBottom: 20, alignItems: 'center' }}>
-                        <Grid xs={12} lg={3}>
+                    <Grid container direction='row'>
+                        <Grid item xs={12} lg={4} style={{ marginTop: 30, marginBottom: 20, textAlign: 'center' }}>
                             <img id='img-queen' alt='' src={process.env.PUBLIC_URL + '/img/queen-piece.jpg'} />
                         </Grid>
-                        <Grid xs={12} lg={9}>
+                        <Grid item xs={12} lg={8} style={{ marginTop: 30, marginBottom: 20, lineHeight: '1.5rem',
+                                                           display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                             <p>Pick any cell to set queen. Note that every row, column and diagonal only have one queen.</p>
                         </Grid>
                     </Grid>
 
-                    <div id='div-fake-check-answer' style={{ marginTop: 30, marginBottom: 30, cursor: 'not-allowed' }} onMouseDown={checkAnswer}>
+                    <Grid item xs={12} id='div-fake-check-answer' style={{ marginTop: 20, marginBottom: 30, cursor: 'not-allowed' }} 
+                          onMouseDown={checkAnswer}>
                         <button id='btn-check-answer' className='primary'>Check answer</button>
-                    </div>
+                    </Grid>
                 </Grid>
 
                 <Grid item xs={12} lg={7} justifyContent='center' id='grid-board'>

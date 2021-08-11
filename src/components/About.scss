@@ -1,0 +1,11 @@
+#div-info {
+    a {
+        color: #C8c037;
+        font-style: italic;
+        font-weight: bold;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

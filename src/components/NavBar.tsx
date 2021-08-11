@@ -121,7 +121,7 @@ export const NavBar = ():ReactElement => {
           </IconButton>
 
           <Typography className={classes.title} variant="h6" noWrap>
-            N Queens
+            N Queens - cracking your brain
           </Typography>
 
           <div className={classes.grow} />

@@ -1,6 +1,7 @@
 import { Container, Grid, SnackbarContent } from '@material-ui/core';
 import { ReactElement } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import './About.scss';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -18,12 +19,18 @@ export const About = (): ReactElement => {
     return (
         <Container>
             <Grid container direction='row' className={classes.root}>
-                <Grid item sm={12} lg={7} style={{display: 'flex'}} alignItems='center'>
+                <Grid id='div-info' item sm={12} lg={7} style={{display: 'flex'}} alignItems='center'>
                     <SnackbarContent
                         message={
-                            <div style={{ lineHeight: 2, paddingTop: 60, paddingBottom: 60 }}>
+                            <div style={{ textAlign: 'left', lineHeight: 2, paddingTop: 60, paddingBottom: 60 }}>
                                 <p>Hi everyone, I'm Vuong Nguyen - creator of this page &nbsp; ^_^</p>
-                                <p>Enjoy yourselves !</p>
+                                <p>This is the classical game for cracking your brain. Enjoy yourselves !</p>
+                                <p>I also have another website for travelling online. You can find</p>
+                                <p>
+                                    <a href='https://travel-world-with-vuong.netlify.app/' rel="noreferrer" target='_blank'>
+                                        Travel online around the round
+                                    </a>&nbsp; here.
+                                </p>
                             </div>
                         }
                     />
