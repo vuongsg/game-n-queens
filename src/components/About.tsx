@@ -28,7 +28,7 @@ export const About = (): ReactElement => {
                                 <p>I also have another website for travelling online. You can find</p>
                                 <p>
                                     <a href='https://travel-world-with-vuong.netlify.app/' rel="noreferrer" target='_blank'>
-                                        Travel online around the round
+                                        Travel online around the world
                                     </a>&nbsp; here.
                                 </p>
                             </div>
