@@ -4,17 +4,20 @@
   box-sizing: border-box;
 }
 
-body {
-  margin: 0;
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+body, html, input, button, select, option, p, span, label, div, header, nav, article, section, footer, form,
+fieldset, table, tr, td, img, h1, h2, h3, h4, h5, h6, code {
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif; */
+  font-family: Calibri,Helvetica,sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
+} */
 
 input, button, textarea, select, option, div {
   :focus {

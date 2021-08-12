@@ -184,6 +184,7 @@ export const Nqueens = (): ReactElement => {
 
             if (answer.size === 0) {
                 alert('Congratulations! You have an amazing play *__*');
+                removeBorderCells(gridBoard);
             } else {
                 const rowsCollection = Array.from(gridBoard.getElementsByClassName('row-board'));
 
@@ -202,6 +203,21 @@ export const Nqueens = (): ReactElement => {
                             cellUI.style.border = 'none';
                         }
                     }
+                }
+            }
+        }
+    }
+
+    const removeBorderCells = (gridBoard: Element) => {
+        if (gridBoard !== null) {
+            const rowsCollection = Array.from(gridBoard.getElementsByClassName('row-board'));
+
+            for (let row of rowsCollection) {
+                const cellsCollection = Array.from(row.getElementsByClassName('cell-board'));
+
+                for (let cell of cellsCollection) {
+                    const cellUI = cell as HTMLDivElement;
+                    cellUI.style.border = 'none';
                 }
             }
         }
