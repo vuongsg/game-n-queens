@@ -19,6 +19,16 @@ fieldset, table, tr, td, img, h1, h2, h3, h4, h5, h6, code {
     monospace;
 } */
 
+body {
+  background-color: #E9EBEE;
+}
+
+.main-container {
+  margin: 20px auto;
+  background-color: #fff;
+  min-height: 800px;
+}
+
 input, button, textarea, select, option, div {
   :focus {
     outline: none  !important;

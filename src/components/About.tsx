@@ -17,7 +17,7 @@ export const About = (): ReactElement => {
     const classes = useStyles();
 
     return (
-        <Container>
+        <Container className='main-container'>
             <Grid container direction='row' className={classes.root}>
                 <Grid id='div-info' item sm={12} lg={7} style={{display: 'flex'}} alignItems='center'>
                     <SnackbarContent

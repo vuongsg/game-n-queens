@@ -226,7 +226,7 @@ export const Nqueens = (): ReactElement => {
     drawBoard();    //draw board at initialize
 
     return (
-        <Container>
+        <Container className='main-container'>
             <Grid container direction='row'>
                 <Grid item xs={12} lg={5} id='select-area'>
                     <Grid item xs={12}>
