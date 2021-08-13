@@ -228,7 +228,7 @@ export const Nqueens = (): ReactElement => {
     return (
         <Container className='main-container'>
             <Grid container direction='row'>
-                <Grid item xs={12} lg={5} id='select-area'>
+                <Grid item xs={12} lg={5} id='select-area' style={{textAlign: 'center'}}>
                     <Grid item xs={12}>
                         <InputLabel id='label-size'>Select size for the board</InputLabel>
                         <Select labelId='label-size' value={board.length} onChange={changeSize}>
