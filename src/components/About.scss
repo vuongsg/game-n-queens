@@ -1,11 +1,17 @@
+$yellow-color: #C8c037;
+
 #div-info {
     a {
-        color: #C8c037;
-        font-style: italic;
-        font-weight: bold;
+        @extend .impo;
 
         &:hover {
             text-decoration: underline;
         }
     }
+}
+
+.impo {
+    color: $yellow-color;
+    font-style: italic;
+    font-weight: bold;
 }
