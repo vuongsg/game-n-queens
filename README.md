@@ -2,7 +2,7 @@
 N queens puzzle. You can try with variant 4x4, 6x6, 8x8 and 10x10 boards.
 
 ## Website for it
-[https://game-n-queens-with-vuong.netlify.app/](https://game-n-queens-with-vuong.netlify.app/){:target="_blank"}
+%md <a href="https://game-n-queens-with-vuong.netlify.app/" target="_blank">https://game-n-queens-with-vuong.netlify.app/</a>
 
 ## Installing
 ```
