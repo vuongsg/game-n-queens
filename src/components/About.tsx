@@ -25,11 +25,16 @@ export const About = (): ReactElement => {
                             <div style={{ lineHeight: 2, paddingTop: 60, paddingBottom: 60 }}>
                                 <p>Hi everyone, I'm <span className='impo'>Vuong Nguyen</span> - creator of this page &nbsp; ^_^</p>
                                 <p>This is the classical game for cracking your brain. Enjoy yourselves !</p>
-                                <p>I also have another website for travelling online. You can find</p>
+                                <p>Here is the list of my other websites:</p>
                                 <p>
                                     <a href='https://travel-world-with-vuong.netlify.app/' rel="noreferrer" target='_blank'>
                                         Travel online around the world
-                                    </a>&nbsp; here.
+                                    </a>
+                                </p>
+                                <p>
+                                    <a href='https://game-snake-with-vuong.netlify.app/' rel="noreferrer" target='_blank'>
+                                        Snake
+                                    </a>
                                 </p>
                             </div>
                         }
