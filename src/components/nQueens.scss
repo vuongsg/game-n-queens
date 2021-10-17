@@ -1,7 +1,7 @@
-$width_cell: 50px;
-$height_cell: 50px;
-$smal_width_cell: 40px;
-$smal_height_cell: 40px;
+$CELL_SIZE: 50px;
+$CELL_MEDIUM_SIZE: 40px;
+$CELL_SMALL_SIZE: 30px;
+$CELL_TINY_SIZE: 22px;
 $white: #fff;
 $black: #000;
 
@@ -31,8 +31,8 @@ $black: #000;
 
 .cell-board {
     display: inline-flex;
-    width: $width_cell;
-    height: $height_cell;
+    width: $CELL_SIZE;
+    height: $CELL_SIZE;
     cursor: pointer;
 
     &.white {
@@ -44,9 +44,23 @@ $black: #000;
     }
 }
 
-@media screen and (max-width: 1500px) {
+@media screen and (min-width: 800px) and (max-width: 1500px) {
     .cell-board {
-        width: $smal_width_cell;
-        height: $smal_height_cell;
+        width: $CELL_MEDIUM_SIZE;
+        height: $CELL_MEDIUM_SIZE;
+    }
+}
+
+@media screen and (min-width: 401px) and (max-width: 799px) {
+    .cell-board {
+        width: $CELL_SMALL_SIZE;
+        height: $CELL_SMALL_SIZE;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .cell-board {
+        width: $CELL_TINY_SIZE;
+        height: $CELL_TINY_SIZE;
     }
 }
