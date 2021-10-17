@@ -44,14 +44,14 @@ $black: #000;
     }
 }
 
-@media screen and (min-width: 800px) and (max-width: 1500px) {
+@media screen and (min-width: 700px) and (max-width: 1500px) {
     .cell-board {
         width: $CELL_MEDIUM_SIZE;
         height: $CELL_MEDIUM_SIZE;
     }
 }
 
-@media screen and (min-width: 401px) and (max-width: 799px) {
+@media screen and (min-width: 401px) and (max-width: 699px) {
     .cell-board {
         width: $CELL_SMALL_SIZE;
         height: $CELL_SMALL_SIZE;
