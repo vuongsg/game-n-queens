@@ -78,7 +78,7 @@ export const Nqueens = (): ReactElement => {
             btnCheckAnswer.setAttribute('disabled', 'disabled');
             (document.querySelector('#div-fake-check-answer') as HTMLDivElement).style.cursor = 'not-allowed';
         }
-    }, []);
+    }, [boardState.board]);
 
     /**
      * cbx Size change event
