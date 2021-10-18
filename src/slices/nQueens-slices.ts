@@ -49,11 +49,11 @@ const slice = createSlice({
                 showCongrats: false
             }
         },
-        removeErrorBoard: (state: BoardState) => {
+        removeErrorBoard: (state: BoardState, action: PayloadAction<boolean>) => {
             return {
                 ...state,
                 errorBoard: createBoard(state.size),
-                showCongrats: true
+                showCongrats: action.payload
             }
         }
     }

@@ -90,6 +90,7 @@ export const Nqueens = (): ReactElement => {
     }
 
     const setQueen = (e: MouseEventHandler<HTMLDivElement>, rowIdx: number, colIdx: number): void => {
+        dispatch(removeErrorBoard(false));
         const size = boardState.size;
         const tempBoard = cloneArray(boardState.board);
 
@@ -148,7 +149,7 @@ export const Nqueens = (): ReactElement => {
         const answer = NqueenProducer.checkBoardValid(boardState.board);
 
         if (answer.size === 0) {
-            dispatch(removeErrorBoard())
+            dispatch(removeErrorBoard(true))
         } else {
             (document.querySelector('#divCongrats') as HTMLDivElement).style.display = 'none';
             const tempErrBoard = cloneArray(boardState.errorBoard);
