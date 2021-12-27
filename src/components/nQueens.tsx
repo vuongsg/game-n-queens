@@ -6,6 +6,7 @@ import { BoardState, changeBoard, changeQueen, setErrorBoard, removeErrorBoard }
 import { RootType } from "../store";
 import { NqueenProducer } from '../producers/nQueensProducer';
 import './nQueens.scss';
+import { BoardView } from './BoardView';
 
 const useStyles = makeStyles(theme => ({
     none: {
@@ -46,6 +47,7 @@ export const Nqueens = (): ReactElement => {
     let boardState = useSelector<RootType>(state => state.nQueens) as BoardState;   //board state
     const dispatch = useDispatch();
     const classes = useStyles();
+    const boardSizes = [4, 5, 6, 7, 8, 9, 10];
 
     useEffect(() => {
         let eachQueenEachRow = false;
@@ -217,10 +219,9 @@ export const Nqueens = (): ReactElement => {
                     <Grid item xs={12}>
                         <InputLabel id='label-size'>Select size for the board</InputLabel>
                         <Select labelId='label-size' value={boardState.size} onChange={changeSize}>
-                            <MenuItem value="4">4 x 4</MenuItem>
-                            <MenuItem value="6">6 x 6</MenuItem>
-                            <MenuItem value="8">8 x 8</MenuItem>
-                            <MenuItem value="10">10 x 10</MenuItem>
+                            {
+                                boardSizes.map(m => <MenuItem value={m}>{m} x {m}</MenuItem>)
+                            }
                         </Select>
                     </Grid>
 
@@ -239,16 +240,8 @@ export const Nqueens = (): ReactElement => {
                         <button id='btn-check-answer' className='primary'>Check answer</button>
                     </Grid>
                 </Grid>
-
-                <Grid item xs={12} lg={7} justifyContent='center' id='grid-board'>
-                    {boardState.board.map((row, rowIdx) => 
-                        <div className={getRowClassNames(rowIdx)}>{
-                            row.map((col, colIdx) => 
-                                <div className={getCellClassNames(rowIdx, colIdx)} tabIndex={0} onMouseDown={(e: any) => setQueen(e, rowIdx, colIdx)}></div>
-                            )}
-                        </div>
-                    )}
-                </Grid>
+                
+                <BoardView board={boardState.board} getRowClassNames={getRowClassNames} getCellClassNames={getCellClassNames} setQueen={setQueen} />
             </Grid>
         </Container>
     )
