@@ -25,4 +25,5 @@ yarn start
 ## Technologies
 - React.js
 - Redux
+- Redux Toolkit
 - TypeScript
