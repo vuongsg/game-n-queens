@@ -31,11 +31,6 @@ export const About = (): ReactElement => {
                                         Travel online around the world
                                     </a>
                                 </p>
-                                <p>
-                                    <a href='https://game-snake-with-vuong.netlify.app/' rel="noreferrer" target='_blank'>
-                                        Snake
-                                    </a>
-                                </p>
                             </div>
                         }
                     />
