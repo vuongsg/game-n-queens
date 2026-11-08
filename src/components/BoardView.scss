@@ -3,7 +3,7 @@ $CELL_MEDIUM_SIZE: 40px;
 $CELL_SMALL_SIZE: 34px;
 $CELL_TINY_SIZE: 28px;
 $white: #fff;
-$black: #000;
+$green: #71c07bcf;
 
 #img-queen {
     max-width: 100px;
@@ -30,14 +30,14 @@ $black: #000;
     width: $CELL_SIZE;
     height: $CELL_SIZE;
     cursor: pointer;
-    border: 1px $black solid;
+    border: 1px $green solid;
 
     &.white {
         background-color: $white;
     }
 
     &.black {
-        background-color: $black;
+        background-color: $green;
     }
 }
 

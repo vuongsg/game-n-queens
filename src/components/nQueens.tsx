@@ -211,7 +211,7 @@ export const Nqueens = (): ReactElement => {
         <Container className='main-container'>
             <Grid id='divCongrats' container direction='row' style={{display: boardState.showCongrats ? 'block' : 'none', 
                                                                     textAlign: 'center', padding: '10px'}}>
-                <h1 style={{color: 'blue'}}>Congratulations! You have an amazing play *__*</h1>
+                <h1 style={{color: 'blue'}}>Congratulations! Well done ^_^</h1>
             </Grid>
 
             <Grid container direction='row'>
